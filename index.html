@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">Jisnu</a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+    <nav class="navbar">
+      <a href="#home" style="--i:1">Home</a>
+      <a href="about.html" style="--i:2">About</a>
+      <a href="skill.html" style="--i:3">Skills</a>
+      <a href="portfolio.html" style="--i:4">Portfolio</a>
+      <a href="contact.html" style="--i:5">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <img src="home.jpg" alt="Jisnu Hazra" class="home-img">
+    <div class="home-content">
+      <h3>Hello, It's Me</h3>
+      <h1>JISNU HAZRA</h1>
+      <h3>And I'm a <span class="text"></span></h3>
+      <p>I'm a passionate web designer with over 2 years of experience in creating beautiful and responsive websites.</p>
+
+      <div class="home-sci">
+        <a href="https://facebook.com"><i class='bx bxl-facebook'></i></a>
+        <a href="https://instagram.com"><i class='bx bxl-instagram'></i></a>
+        <a href="https://linkedin.com"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://twitter.com"><i class='bx bxl-twitter'></i></a>
+        <a href="https://github.com"><i class='bx bxl-github'></i></a>
+      </div>
+
+      <a href="aboutMe.html" class="btn-box">More About Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Jisnu Hazra. All rights reserved.</p>
+  </footer>
+
+  <script>
+    var typed = new Typed(".text", {
+      strings: ["Web Developer", "UI/UX Designer", "Frontend Engineer"],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true
+    });
+  </script>
+</body>
+</html>
