@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Section</title>
+  <link rel="stylesheet" href="portfolio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <section class="container">
+    <h2>My Portfolio</h2>
+
+    <div class="filters">
+      <button class="active" onclick="filterSelection('all')">All</button>
+      <button onclick="filterSelection('web')">Web</button>
+      <button onclick="filterSelection('mobile')">Mobile</button>
+      <button onclick="filterSelection('uiux')">UI/UX</button>
+    </div>
+
+    <div class="grid" id="portfolioGrid">
+      <div class="card filter-item web" onclick="openPreview('E-commerce Platform', 'React + Firebase shop', 'https://via.placeholder.com/600x400')">
+        <img src="https://via.placeholder.com/600x400" alt="Project Image">
+        <div class="card-body">
+          <div class="card-title">E-commerce Platform</div>
+          <div class="card-text">React + Firebase shop</div>
+          <span class="preview-btn">Preview</span>
+        </div>
+      </div>
+      <div class="card filter-item uiux" onclick="openPreview('Portfolio Website', 'Interactive animations', 'https://via.placeholder.com/600x400')">
+        <img src="https://via.placeholder.com/600x400" alt="Project Image">
+        <div class="card-body">
+          <div class="card-title">Portfolio Website</div>
+          <div class="card-text">Interactive animations</div>
+          <span class="preview-btn">Preview</span>
+        </div>
+      </div>
+      <div class="card filter-item mobile" onclick="openPreview('Chat App', 'Real-time chat app', 'https://via.placeholder.com/600x400')">
+        <img src="https://via.placeholder.com/600x400" alt="Project Image">
+        <div class="card-body">
+          <div class="card-title">Chat App</div>
+          <div class="card-text">Real-time chat app</div>
+          <span class="preview-btn">Preview</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="previewModal">
+    <div class="modal-content">
+      <span class="close" onclick="closePreview()">&times;</span>
+      <img id="modalImage" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script>
+    function filterSelection(category) {
+      let items = document.querySelectorAll('.filter-item');
+      document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openPreview(title, desc, img) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('modalImage').src = img;
+      document.getElementById('previewModal').style.display = 'flex';
+    }
+
+    function closePreview() {
+      document.getElementById('previewModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
